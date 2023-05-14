@@ -9,13 +9,14 @@ services:
     depends_on:
       - mysqldb
   mysqldb:
+    platform: linux/x86_64
     image: "mysql:5.7"
     restart: on-failure
     ports:
       - 3307:3306
     environment:
       MYSQL_DATABASE: godel
-      MYSQL_USER: root
-      MYSQL_PASSWORD: root
+      MYSQL_USER: musni007
+      MYSQL_PASSWORD: musni007
       MYSQL_ROOT_PASSWORD: root
      

@@ -1,5 +1,7 @@
 package com.godeltechnologies.bank.service;
 
+import java.sql.Timestamp;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,7 +29,8 @@ public class TransactionServiceImpl implements TransactionService {
 	public TransactionEntity saveTranaction(TransactionRequestDTO request) {
 		log.info("Inside saveTranaction method of TransactionService");
 		TransactionEntity transaction = TransactionEntity.builder().amount(request.getAmount())
-				.currency(request.getCurrency()).accountId(request.getAccountId()).status(Status.NEW).build();
+				.currency(request.getCurrency()).accountId(request.getAccountId())
+				.timestamp(new Timestamp(System.currentTimeMillis())).status(Status.NEW).build();
 
 		return transactionRepository.save(transaction);
 

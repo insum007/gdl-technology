@@ -41,6 +41,11 @@
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
+		<dependency>
+			<groupId>org.liquibase</groupId>
+			<artifactId>liquibase-core</artifactId>
+		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/org.mockito/mockito-junit-jupiter -->
 		<dependency>
 			<groupId>org.mockito</groupId>

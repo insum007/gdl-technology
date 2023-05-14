@@ -1,5 +1,7 @@
 package com.godeltechnologies.bank.entity;
 
+import java.sql.Timestamp;
+
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -18,17 +20,17 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name="transaction")
+@Table(name = "transaction")
 public class TransactionEntity {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String currency;
-    private Long amount;
+	private Long amount;
 	private Long accountId;
+	private Timestamp timestamp;
 	@Enumerated(EnumType.STRING)
 	private Status status;
-
 
 }
